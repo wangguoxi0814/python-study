@@ -16,3 +16,13 @@ python study
     - `data_type_stu.py`   
 - 错误示例：
     - `01_hello_python.py`
+
+# 乱码问题
+- Windos系统Cursor/VS Code点击Run Code输出中文乱码问题，文件编码字符集和输出解码字符集不一致，以文件编码为UTF-8为例
+    - 确认自己的文件是否为UTF-8编码，编辑器右下方可以看到，如果不是，则需要将文件编码修改为`UTF-8`
+    - 打开设置，搜索`Code-runner: Executor Map`，点击`Edit in settings.json`，增加如下内容：  
+        ```json
+        "code-runner.executorMap": {
+            "python": "python -u -X utf8"
+        }
+        ```
