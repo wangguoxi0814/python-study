@@ -6,6 +6,8 @@ python study
 - `Cursor`/`VsCode`自动保存：点击左上角`File->Auto Save`
 - `Cursor`/`VsCode`的`Code Runner`插件运行在终端配置：打开`File->Preferences->VsCode Settings`(快捷键`Ctrl+,`)，搜索`code-runner.runInTerminal`后，勾选`Whether to run code in intergrated Terminal`，否则插件默认运行后只展示输出，无法监听用户键盘输入
 - `Cursor`/`VsCode`文件窗口多行显示：打开的文件很多时，上方的文件标签超出部分会无法直观看到，开发文件标签多行显示，能更直观的看到所有文件标签。打开`Settings`,搜索`workbench.editor.wrapTabs`后勾选
+- `Cursor`/`VsCode`预览MD无法渲染任务列表问题，安装`MarkDown All in One`插件
+
 
 # GitHub问题
 - 克隆和推送方式建议使用SSH，比HTTPS更稳定（HTTPS可能会存在开了VPN也无法推送问题）
