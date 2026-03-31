@@ -6,6 +6,10 @@
 list1 = [1, "hello", True, 3.14, 100]
 print('list1:', list1)
 print('list1的长度：', len(list1))
+double_list = list1 * 2
+print('double_list=', double_list)
+tiny_list = ['tiny', 'mini']
+print('list1 + tiny_list=', list1 + tiny_list)
 
 # 通过索引访问列表元素
 # 和字符串一样，索引从左到右，从0开始，到len(list1) - 1
