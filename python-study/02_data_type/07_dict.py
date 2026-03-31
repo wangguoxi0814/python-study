@@ -8,6 +8,12 @@
 
 # 在同一个字典中，键(key)必须是唯一的。
 
+## 注意：
+# 1、字典是一种映射类型，它的元素是键值对。
+# 2、字典的关键字必须为不可变类型，且不能重复。
+# 3、创建空字典使用 { }。
+
+
 from cgi import print_directory
 
 
@@ -28,6 +34,7 @@ print (tinyfirst_dict.values()) # 输出所有值
 first_dict1 = dict([('Runoob', 1), ('Google', 2), ('Taobao', 3)])
 print(first_dict1)
 
+# {x: x**2 for x in (2, 4, 6)} 该代码使用的是字典推导式
 first_dict2 = {x: x ** 2 for x in (1,2,3,4)}
 print(first_dict2)
 
