@@ -14,8 +14,6 @@
 # 3、创建空字典使用 { }。
 
 
-from cgi import print_directory
-
 
 first_dict = {}
 first_dict['one'] = "1"
