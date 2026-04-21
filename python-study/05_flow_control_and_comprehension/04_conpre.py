@@ -19,3 +19,18 @@ listdemo = ['Google', 'Tecent', 'ByteDance']
 new_dict2 = {key: len(key) for key in listdemo}
 print(new_dict2)
 
+print("3. 集合推导式")
+set1 = {i for i in range(10)}
+print('set1 : ', set1)
+
+set2 = {c for c in 'aghdbchjbdddaaa' if c not in 'abc'}
+print('set2 : ', set2)
+
+# 4. 元组推导式
+tuple1 = (i for i in range(10))
+print('tuple1 : ', tuple(tuple1))
+
+tuple2 = (i for i in range(10) if i % 2 == 0)
+print('tuple2 : ', tuple(tuple2))
+
+
