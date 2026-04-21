@@ -1,0 +1,25 @@
+# 自定义迭代器，实现一个迭代器类，实现__iter__和__next__方法
+
+class MyNumberItre: 
+    def __iter__(self):
+        self.a = 0
+        return self
+
+    def __next__(self):
+        if self.a < 10:
+            x = self.a
+            self.a += 1
+            return x
+        else:
+            raise StopIteration
+
+print("==========1==========")
+myClass = MyNumberItre()
+for i in myClass:
+    print(i, end=' ')
+print()
+
+print("==========2==========")
+myClass2 = iter(myClass)
+print(next(myClass2))
+print(next(myClass2))
