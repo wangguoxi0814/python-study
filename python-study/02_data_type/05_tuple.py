@@ -34,5 +34,5 @@ tuple4 = tuple1 * 2
 print('tuple4 is :', tuple4)
 
 # 不可变，如下代码会报错
-tuple5 = (1,2,3,4,5)
-tuple5[0] = 10
+# tuple5 = (1,2,3,4,5)
+# tuple5[0] = 10
