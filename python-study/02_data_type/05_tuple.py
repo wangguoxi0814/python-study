@@ -16,18 +16,18 @@ l = len(single_tuple)
 print('single_type len is ', l)
 
 # 切片
-tuple = (1,'Hello', 3.14, -1)
+tuple = (1, 'Hello', 3.14, -1)
 print('tuple[1:] is ', tuple[1:])
 
 # 遍历
-for t in tuple: 
+for t in tuple:
     print(t, end=' ')
 
 print()
 
 # 拼接
-tuple1 = (1,2,3)
-tuple2 = (4,5,6)
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
 tuple3 = tuple1 + tuple2
 print('tuple3 is', tuple3)
 
@@ -38,3 +38,7 @@ print('tuple4 is :', tuple4)
 # 不可变，如下代码会报错
 # tuple5 = (1,2,3,4,5)
 # tuple5[0] = 10
+
+# 判断元素是否存在于元组中
+tuple_contain = (1, 2, 3)
+print('1存在于tuple_contain中', 1 in tuple_contain)
