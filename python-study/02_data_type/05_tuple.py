@@ -2,6 +2,12 @@
 # 元组和list的唯一区别是不可变
 # 元组同样是连续的、有序的。支持切片、索引、遍历、拼接、乘法、长度等操作
 
+# 构造函数创建tuple
+tc = tuple()
+print('tc is:', tc)
+tc = tuple([1,2,3])
+print('tc is:', tc)
+
 # 创建空元组
 empty_tuple = ()
 print('empty tuplee is:', empty_tuple)
