@@ -76,7 +76,7 @@ print(f'你好 {name}, seq保留有效数字:{seq:.4}, seq总宽度小于变量�
 print('==============================')
 print('7. len()：字符个数（空格、换行都算 1 个字符）')
 print('len("hello"):', len('hello'))
-print('len("hello world"):', len('hello world'))
+print('len("hello python"):', len('hello python'))
 s = 'hello\npython'
 print('len(含换行):', len(s), '  repr:', repr(s))
 
