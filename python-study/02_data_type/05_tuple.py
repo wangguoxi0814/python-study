@@ -5,7 +5,7 @@
 # 创建空元组
 empty_tuple = ()
 print('empty tuple is:', empty_tuple)
-# 创建单个元素元组,注意:一定要以逗号结尾，否则会被当做一个数组，括号会视作数学运算中的括号
+# 创建单个元素元组,注意:一定要以逗号结尾，否则括号会视作数学运算中的括号,整体会被当做一个数字
 single_tuple = (1,)
 not_tuple = (1)
 print('single_tuple type is:', type(single_tuple))
@@ -23,11 +23,13 @@ print('tuple[1:] is ', tuple[1:])
 for t in tuple: 
     print(t, end=' ')
 
+print()
+
 # 拼接
 tuple1 = (1,2,3)
 tuple2 = (4,5,6)
 tuple3 = tuple1 + tuple2
-print('tuple3 is ', tuple3)
+print('tuple3 is', tuple3)
 
 # 乘法
 tuple4 = tuple1 * 2
