@@ -5,7 +5,7 @@
 # 复数：用来表示复数，如1+2j,3+4j,5+6j,7+8j,9+10j
 
 # 整数类型：int
-# python3中只有int一种证书类型，不再有python2的long类型
+# python3中只有int一种整数类型，不再有python2的long类型
 print('整数类型：int')
 i = 1
 print('i:', i)
