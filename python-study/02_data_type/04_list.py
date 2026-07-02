@@ -60,3 +60,8 @@ print('list3=', list3)      # [10, 12, 11]
 print('list3[-1:-3]=', list3[-1:-3])
 list3[-1:-3] = [30,40]
 print('list3=', list3)      # [10, 12, 30, 40, 11]
+
+
+# 判断元素是否存在
+list_con = [1, 2, 3]
+print("1存在于list中", 1 in list_con)
