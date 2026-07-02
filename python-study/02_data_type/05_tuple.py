@@ -4,7 +4,7 @@
 
 # 创建空元组
 empty_tuple = ()
-print('empty tuple is:', empty_tuple)
+print('empty tuplee is:', empty_tuple)
 # 创建单个元素元组,注意:一定要以逗号结尾，否则括号会视作数学运算中的括号,整体会被当做一个数字
 single_tuple = (1,)
 not_tuple = (1)
@@ -16,11 +16,11 @@ l = len(single_tuple)
 print('single_type len is ', l)
 
 # 切片
-tuple = (1, 'Hello', 3.14, -1)
-print('tuple[1:] is ', tuple[1:])
+tuplee = (1, 'Hello', 3.14, -1)
+print('tuplee[1:] is ', tuplee[1:])
 
 # 遍历
-for t in tuple:
+for t in tuplee:
     print(t, end=' ')
 
 print()
@@ -30,6 +30,13 @@ tuple1 = (1, 2, 3)
 tuple2 = (4, 5, 6)
 tuple3 = tuple1 + tuple2
 print('tuple3 is', tuple3)
+# 添加元素
+# tuple由于不可变，因此没有添加、移除方法。如果要追加，可以先换位list，操作完毕再转回元组
+t1 = (1,2,3)
+l1 = list(t1)
+l1.append(4)
+t2 = tuple(l1)
+print('t2 is:', t2)
 
 # 乘法
 tuple4 = tuple1 * 2
