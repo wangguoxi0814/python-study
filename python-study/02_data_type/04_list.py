@@ -1,6 +1,11 @@
 # List类型:列表，可以包含多个元素，且类型可以不同
 # List是一种连续、有序、可变的数据类型
 
+# 构造器构建list
+lc = list()
+print('lc is:', lc)
+lc = list((1,2,3))
+print('lc is:', lc)
 
 # 创建列表
 list1 = [1, "hello", True, 3.14, 100]
