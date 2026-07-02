@@ -24,8 +24,12 @@ print('list1[0 - len(list1)]:', list1[0 - len(list1)])
 for item in list1:
     print(item, end=' ')
 
+print()
 # 切片,左闭右开，支持步长，步长默认为1，负数步长则逆序
 # list1 = [1, "hello", True, 3.14, 100]
+print('list1[1:1]=', list1[1:1])  # 空切片,左闭右开，这个索引区间为[1,1),这个区间在数学里是空集，也就是这个索引区间不包含1这个索引，因此空切片
+print('list1[-1:-3]=', list1[-1:-3]) # 空切片, -1正向不可达-3，因此空切片
+print('list1[1::8]=', list1[1::8])   # 收集索引1,9,17,但仅索引1有效，所以输出hello
 print('list1[1:3]=', list1[1:3])
 print('list1[1:]=', list1[1:])
 print('list1[:3]=', list1[:3])
