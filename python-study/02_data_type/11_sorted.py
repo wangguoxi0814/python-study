@@ -10,6 +10,7 @@
 # sorted不是原地排序，会返回一个新的容器，因此这里l1本身不会发生变化
 # sorted默认升序，reverse=True为降序
 # sorted无论传入什么可迭代对象，返回值都是list
+# sorted操作字符串，按字符的码值排序
 l1 = [7, 6, 2, 9]
 s_l1 = sorted(l1)
 s_l1_desc = sorted(l1, reverse=True)
@@ -45,3 +46,10 @@ print('d1 is:', d1)
 print('s_d1 is:', s_d1)
 print('s_d1_desc is:', s_d1_desc)
 print()
+
+#str
+s1 = "Hello Agent"
+s_s1 = sorted(s1)
+print('s_s1 is:', s_s1)
+print('A ord is:', ord('A'))
+print('t ord is:', ord('t'))
