@@ -1,6 +1,6 @@
 # with 
 # 自动打开，自动关闭资源的语法
-# with会调用类的__enter__方法，退出时调用__exit__方法
+# with会调用类的__enter__方法，退出时调用__exit__方法，即便with中的代码块发送异常，也会调用__exit__方法
 # with...as...接受到的对象是__enter__方法的返回值
 # __exit__方法的参数：exc_type, exc_val, exc_tb
 # exc_type: 异常类型
@@ -38,3 +38,30 @@ print("2")
 with Timer() as timer:
     print(timer)
     time.sleep(1)
+
+
+# 异常处理情况
+class Person:
+    def __init__(self, name, age):
+        self.name=name
+        self.age=age
+
+    def __enter__(self):
+        print('enter...')
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print('exit...')
+        if exc_type:
+            print(f'exe_type={exc_type}')
+            print(f'exc_val={exc_val}')
+            print(f'exc_tb={exc_tb}')
+        # 返回True表示错误被处理，错误信息不会抛出去，False表示未处理，会抛出去
+        return True
+
+    def study(self):
+        print(f'我是{self.name}, 今年{self.age}岁，我爱学习')
+
+with Person('Peter', 18) as p:
+    p.study()
+    p.relax()
