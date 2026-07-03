@@ -9,7 +9,7 @@
 # 返回值：True表示异常被处理，False表示异常未被处理，会将异常抛到外面，不会被捕获
 
 
-with open('docs/withdemo.txt', 'r') as f:
+with open('../../docs/withdemo.txt', 'r') as f:
     for line in f:
         print(line)
 
