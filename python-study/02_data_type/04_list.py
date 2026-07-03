@@ -71,10 +71,31 @@ print('list_insert is:', list_insert)
 list_insert.insert(2, [100,1000])
 print('list_insert is:', list_insert)
 
-# 移除
+# remove 按元素移除, 没有返回值
 list_remove = [1,2,3]
-list_remove.remove(2)
+remove_ele = list_remove.remove(2)  # None
+print(f'list remove ele is {remove_ele}')
 print('list_remove is:', list_remove)
+
+# pop 弹出 返回弹出的元素
+# pop 移除指定位置的元素，如果不指定位置，则移除列表最后一个元素
+l_pop1 = [1,2,3]
+pop_ele = l_pop1.pop()
+print(f'pop ele is {pop_ele}')
+print(f'pop ele l_pop1 is {l_pop1}')
+print()
+
+l_pop2 = [1,2,3]
+first_ele = l_pop2.pop(0)
+print(f'first_ele is {first_ele}')
+print(f'pop ele l_pop2 is {l_pop2}')
+print()
+
+# del按索引移除, 没有返回值
+l_del = [1,2,3]
+del l_del[2]  # 删除索引位置2的元素
+print(f'del ele l_del is {l_del}')
+print()
 
 # 可变
 list2 = [1,2,3,4,5,6,7,8,9]
