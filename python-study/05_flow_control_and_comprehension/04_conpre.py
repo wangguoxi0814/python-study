@@ -1,12 +1,11 @@
 # 推导式，可以从一个数据序列构建另外一个新数据序列的结构体
 
-
 print("1. list推导式")
-list = [i for i in range(10)]
-print(type(list))
-print(list)
+l1 = [i for i in range(10)]
+print(type(l1))
+print(l1)
 
-list2 = [i for i in list if i % 2 == 0]
+list2 = [i for i in l1 if i % 2 == 0]
 print(list2)
 
 print("2. dict推导式")

@@ -4,11 +4,13 @@
 # 迭代器是一个实现了__iter__和__next__方法的对象
 # __iter__方法返回迭代器对象本身
 # __next__方法返回下一个数据元素
-# 迭代器终止时会抛出StopIteration异常
+# 迭代器终止时会抛出StopIteration异常(迭代器协议规定)
+    # 如果不抛出异常，在for变量时死循环
+    # list(iter)时，会无限读取，死循环/内存溢出
 # 迭代器对象可以通过next()函数来获取下一个数据元素
 print("==========1==========")
-list = [1,2,3,4,5]
-ite = iter(list)
+l1 = [1,2,3,4,5]
+ite = iter(l1)
 print('ite: ', ite)
 while True:
     try: 
