@@ -31,6 +31,6 @@ else:
 print("==========4==========")
 
 # 遍历列表同时获取值和索引
-list = [1,2,3]
-for i, v in enumerate[int](list):
+l = [1,2,3]
+for i, v in enumerate[int](l):
     print(f'索引{i}的值是{v}')
