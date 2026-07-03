@@ -1,6 +1,11 @@
 # List类型:列表，可以包含多个元素，且类型可以不同
 # List是一种连续、有序、可变的数据类型
 
+# 构造器构建list
+lc = list()
+print('lc is:', lc)
+lc = list((1,2,3))
+print('lc is:', lc)
 
 # 创建列表
 list1 = [1, "hello", True, 3.14, 100]
@@ -10,6 +15,20 @@ double_list = list1 * 2
 print('double_list=', double_list)
 tiny_list = ['tiny', 'mini']
 print('list1 + tiny_list=', list1 + tiny_list)
+
+# 追加
+list_append = [1,2,3]
+list_append.append(4)
+print('list_append is:', list_append)
+# append 会把整个对象当做一个元素
+list_append.append([5,6])
+print('list_append is:', list_append)
+
+# 扩展
+list_extend = [1,2,3]
+# append会把[4,5]当做一个整体，而extend会把他拆开，再追加
+list_extend.extend([4,5])
+print('list_extend is:', list_extend)
 
 # 通过索引访问列表元素
 # 和字符串一样，索引从左到右，从0开始，到len(list1) - 1
@@ -39,6 +58,23 @@ print('list1[1::2]=', list1[1::2])
 print('list1[-1::-1]=', list1[-1::-1])
 print('list1[-3::-1]=', list1[-3::-1])
 print('list1[-3:]=', list1[-3:])
+
+# 插入
+list_insert = [1,2,3]
+# insert的index超过list的最大索引，不会报错，强制追加在最后一位
+list_insert.insert(5, 6)
+print('list_insert is:', list_insert)
+# 在指定索引位置插入元素
+list_insert.insert(3, 6)
+print('list_insert is:', list_insert)
+# 在指定位置插入[100, 1000]
+list_insert.insert(2, [100,1000])
+print('list_insert is:', list_insert)
+
+# 移除
+list_remove = [1,2,3]
+list_remove.remove(2)
+print('list_remove is:', list_remove)
 
 # 可变
 list2 = [1,2,3,4,5,6,7,8,9]

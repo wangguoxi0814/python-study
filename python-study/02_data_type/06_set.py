@@ -44,4 +44,4 @@ print('set4 is ', set4)
 set4.remove(3)
 print('set4 is ', set4)
 set5 = set('abc')
-print('set5 is ', set5)
+print('set5 is ', set5)   # 这里的列表每次执行都会不一样，因为set是无序的，且添加随机种子计算hash值,每次hash值就不一样，根据hash得到的索引就不一样，因此每次结果不一样
