@@ -7,8 +7,8 @@
 # 迭代器终止时会抛出StopIteration异常
 # 迭代器对象可以通过next()函数来获取下一个数据元素
 print("==========1==========")
-list = [1,2,3,4,5]
-ite = iter(list)
+l1 = [1,2,3,4,5]
+ite = iter(l1)
 print('ite: ', ite)
 while True:
     try: 
