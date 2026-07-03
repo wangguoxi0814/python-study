@@ -38,3 +38,62 @@ print(first_dict2)
 
 first_dict3 = dict(zhangsan=1, wangwu=2, lisi=3)
 print(first_dict3)
+
+
+# dict 增删改查
+d_op = {'zhangsan': 68, 'wangwu': 90, 'zhaoliu': 88}
+# 修改
+d_op['zhangsan'] = 80
+print(f'update ele d_op is {d_op}')
+# 查询
+d_op = {'zhangsan': 68, 'wangwu': 90, 'zhaoliu': 88}
+score = d_op['wangwu']
+print(f'wangwu score is {score}')
+# 获取不存在的key，执行异常 KeyError: 'Peter'
+# 可以使用get()获取key的value，如果key不存在，返回None。get()也可以设置默认值，当key不存在时，返回默认值
+# p_score = d_op['Peter']
+# p_score = d_op.get('Peter')
+p_score = d_op.get('Peter', 0)
+print(f'Peter score is {p_score}')
+
+# 删除
+d_op = {'zhangsan': 68, 'wangwu': 90, 'zhaoliu': 88}
+del d_op['zhaoliu']
+print(f'del key d_op is {d_op}')
+# 增加
+d_op = {'zhangsan': 68, 'wangwu': 90, 'zhaoliu': 88}
+d_op['lisi'] = 99
+print(f'add ele d_op is {d_op}')
+
+# pop
+d_op = {'zhangsan': 68, 'wangwu': 90, 'zhaoliu': 88}
+pop_entry = d_op.pop('zhangsan')
+print(f'pop item is {pop_entry}')
+print(f'pop ele d_op is {d_op}')
+
+# 如果pop操作的key不存在，执行异常 KeyError: 'Peter'
+# p_item = d_op.pop('Peter')
+# pop可以给默认值，如果pop的key不存在，而返回默认值, 如果key存在，则返回实际key对应的value
+p_item = d_op.pop('Peter', 'key不存在')
+print(f'pop item p_item is {p_item}')
+
+# keys / values / items
+# keys 返回 dict_keys ，可遍历，但不可索引,一般转为list索引。直接对dict_keys索引会报：TypeError: 'dict_keys' object is not subscriptable
+# values 返回 dict_values,可遍历，但不可索引，一般转为list索引
+# items 返回dict_items, 元素是一个元组,可遍历，但不可索引，一般转为list索引
+score_dict = {'Peter': 68, 'Lucy': 90, 'Mia': 88}
+ks = score_dict.keys()
+print(f'ks is {ks}, type is {type(ks)}')
+# print(f'ks index 0 ele is {ks[0]}')  # TypeError: 'dict_keys' object is not subscriptable
+lks = list(ks)
+print(f'lks index 0 ele is {lks[0]}')
+
+vs = score_dict.values()
+print(f'vs is {vs}, type is {type(vs)}')
+lvs = list(vs)
+print(f'lvs index 0 ele is {lvs[0]}')
+
+items = score_dict.items()
+print(f'items is {items}, type is {type(items)}')
+lis = list(items)
+print(f'lis index 0 ele is {lis[0]}')
