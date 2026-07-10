@@ -25,11 +25,16 @@ print('set1 : ', set1)
 set2 = {c for c in 'aghdbchjbdddaaa' if c not in 'abc'}
 print('set2 : ', set2)
 
-# 4. 元组推导式
+# 4. 这里不是元组推导式，而是生成器
 tuple1 = (i for i in range(10))
-print('tuple1 : ', tuple(tuple1))
+print(f'generator1: {tuple1}')
+print('transfer to tuple1:', tuple(tuple1))
+# 生成器被耗尽
+print('transfer to list1:', list(tuple1))
 
 tuple2 = (i for i in range(10) if i % 2 == 0)
-print('tuple2 : ', tuple(tuple2))
+print(f'generator1: {tuple2}')
+print('transfer to tuple2:', tuple(tuple2))
+print('transfer to list2:', list(tuple2))
 
 
