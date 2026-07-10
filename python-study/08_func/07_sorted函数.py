@@ -12,6 +12,7 @@ print(f'升序结果：{sr}')
 srd = sorted(l, reverse=True)
 print(f'降序结果：{srd}')
 
+# 字符出排序，默认按照字典码排
 sl = ['Python', 'Go', 'Java']
 ssl = sorted(sl, key=len)
 print(f'长度升序结果：{ssl}')
@@ -33,8 +34,8 @@ class Person:
         self.age = age
         self.gender = gender
 
-    def __lt__(self, other):
-        return self.age < other.age
+    def __gt__(self, other):
+        return self.age > other.age
 
     def __str__(self):
         return f'(name={self.name}, age={self.age}, gender={self.gender})'
@@ -48,18 +49,21 @@ pl = [
 # 如果不指定key，会报TypeError: '<' not supported between instances of 'Person' and 'Person'
 # 解决方法
 # 1. sorted增加key指定排序依据
-# 2. Person实现魔法方法__lt__(__gt__, __eq__ 不需要实现)
+# 2. Person实现魔法方法__lt__或者__gt__
 
-# 默认是升序，所以对于复杂对象，实现__lt__方法即可，因为升序是通过o1 < o2 为true，则o1排前面
+# 升序or降序，取决于__lt__或者__gt__实现逻辑
+# Peter 和 Mary 年龄都是 19 时，两者比较都不为「更小」，排序视为相等；Timsort 稳定，保留原列表顺序，所以 Peter 在 Mary 前面。
 pla = sorted(pl)
 def print_sorted(plist):
     for p in plist:
         print(p, end=',')
     else:
         print()
+print('升序===========================')
 print_sorted(pla)
 
 # 如果只实现了__lt__，猜想降序会报错 XXXX 猜想错误
 # 所以无论升序，降序，只需要实现__lt__即可
 pld = sorted(pl, reverse=True)
+print('降序===========================')
 print_sorted(pld)
