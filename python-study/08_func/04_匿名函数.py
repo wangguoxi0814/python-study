@@ -24,3 +24,6 @@ print('-' * 40)
 
 # 多表达式，编译报错
 # lam_func2 = lambda x: x + 10, x -10
+
+#
+lam_func3 = lambda x: x or isinstance(x, str)
