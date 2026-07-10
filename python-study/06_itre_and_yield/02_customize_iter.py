@@ -15,7 +15,7 @@ class MyNumberItre:
 
 print("==========1==========")
 myClass = MyNumberItre()
-# 只有for循环和iter()会包装的迭代器会调用__iter__方法,直接调用next()，不会执行__iter__方法，因此会报AttributeError: 'MyNumberItre' object has no attribute 'a'
+# 只有for循环和iter()包装的迭代器会调用__iter__方法,直接调用next()，不会执行__iter__方法，因此会报AttributeError: 'MyNumberItre' object has no attribute 'a'
 # print(next(myClass))
 for i in myClass:
     print(i, end=' ')
