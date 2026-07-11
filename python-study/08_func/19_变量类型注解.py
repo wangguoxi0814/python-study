@@ -8,6 +8,8 @@ print(s)
 # 容器, list, set同样写法
 l: list[int] = [1, 2, 3]
 ls: list[int | str] = [1, 'Hello']
+# python可以推断出变量类型，这里append字符串会给警告，但如果对l1重新赋值，则不会警告，如果手动声明了类型注解，会警告重新赋值的操作
+l1 = [1, 2, 3]
 
 # dict
 d: dict[str, int] = {'US': 90, 'CN': 99}
