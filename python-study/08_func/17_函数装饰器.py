@@ -14,16 +14,16 @@ def info(func):
     return wrapper
 
 
-# @info
-# def add(a, b):
-#     return a + b
+@info
+def add(a, b):
+    return a + b
 #
 #
 # # 加了@info，会经过装饰器，等价于下面的调用
 # add(1, 2)
 # # 装饰器原生逻辑
-# info_result = info(add)
-# r = info_result(3, 5)
+# add = info(add)
+# r = add(3, 5)
 # print(f'原生装饰器逻辑结果：{r}')
 
 
@@ -51,8 +51,8 @@ def subtract(a, b):
 
 # 原生带参装饰器逻辑
 # log_func = log('[WARNING]')
-# wrapper = log_func(subtract)
-# re = wrapper(8, 4)
+# subtract = log_func(subtract)
+# re = subtract(8, 4)
 # print(f'多参数装饰器原生逻辑执行结果：{re}')
 
 
