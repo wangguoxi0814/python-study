@@ -1,13 +1,12 @@
 # with 
 # 自动打开，自动关闭资源的语法
-# with会调用类的__enter__方法，退出时调用__exit__方法，即便with中的代码块发送异常，也会调用__exit__方法
+# with会调用实例的__enter__方法，退出时调用__exit__方法，即便with中的代码块发送异常，也会调用__exit__方法
 # with...as...接受到的对象是__enter__方法的返回值
 # __exit__方法的参数：exc_type, exc_val, exc_tb
 # exc_type: 异常类型
 # exc_val: 异常值
 # exc_tb: 异常追踪
 # 返回值：True表示异常被处理，False表示异常未被处理，会将异常抛到外面，不会被捕获
-
 
 with open('../../docs/withdemo.txt', 'r') as f:
     for line in f:
