@@ -1,16 +1,21 @@
 # Queue
 # 特点：FIFO；阻塞；跨进程共享
 # Common API:
-# 1. put():         放入, 如果已满，等待
-#                         block:   决定是否阻塞，如果已满，直接异常
-#                         timeout: 指定等待时间，等待时间过，如果还是已满，异常
-# 2. get():         取出，如果已空，等待
-#                         block:   决定是否阻塞，如果已满，直接异常
-#                         timeout: 指定等待时间，等待时间过，如果还是已满，异常
-# 3. empty():       判断是否为空
-# 4. full():        判断是否已满
-# 5. put_nowait():  放入且不等待，如果已满，直接异常
-# 6. get_nowait():  放入且不等待，如果已满，直接异常
+# 1. put():                 放入, 如果已满，等待
+#                                 block:   决定是否阻塞，如果已满，直接异常
+#                                 timeout: 指定等待时间，等待时间过，如果还是已满，异常
+# 2. get():                 取出，如果已空，等待
+#                                 block:   决定是否阻塞，如果已满，直接异常
+#                                 timeout: 指定等待时间，等待时间过，如果还是已满，异常
+# 3. empty():               判断是否为空
+# 4. full():                判断是否已满
+# 5. put_nowait():          放入且不等待，如果已满，直接异常
+# 6. get_nowait():          放入且不等待，如果已满，直接异常
+
+# put_nowait等价于put(obj, block=False)，虽然它们效果和put(obj, timeout=0)效果一样，但并不等价
+# put_nowait流程:            队列满 -> raise Full
+# put(obj, timeout=0)流程:   队列满 -> 进入timeout分支 -> remaining time < 0 -> raise Full
+
 import time
 # 多进程共享Queue
 from multiprocessing import Queue, Process
