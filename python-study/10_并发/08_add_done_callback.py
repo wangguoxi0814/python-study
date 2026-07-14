@@ -1,4 +1,4 @@
-# add_done_callback ： 任务完成回调方法
+# add_done_callback ： 任务完成回调方法 线程池进程池均适用
 # 通过回调也可以实现as_completed按任务完成顺序获取返回值的效果
 # 回调方法入参必须是Future
 import time

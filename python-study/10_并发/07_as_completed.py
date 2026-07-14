@@ -1,4 +1,4 @@
-# as_completed 获取先完成任务的返回值
+# as_completed 获取先完成任务的返回值  线程池进程池均适用
 #           入参： Future序列
 # 普通Future.result()是按任务提交顺序获取返回值
 # 如果提交顺序A(10s) -> B(1s) -> C(2s)，通过Future获取返回值会被A卡住，即便B\C早已完成，而通过as_completed能先获取已完成任务的返回值
