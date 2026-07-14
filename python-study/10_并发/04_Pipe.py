@@ -1,5 +1,5 @@
 # Pipe 管道
-# 特点：支持双工，单工
+# 特点：支持双工，单工，跨进程
 # 参数：
 #    duplex: bool, 是否双工， 默认True
 from multiprocessing import Pipe
