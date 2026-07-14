@@ -12,6 +12,10 @@
 #       a. lock.acquire()上锁、lock.release()释放锁
 #       b. 最佳实践： with lock
 
+# join
+# p.join()会让当前进程等待p进程执行完再执行，p.join(timeout)可以指定等待时间
+# join只能操作已经start的进程
+
 import os
 import time
 from multiprocessing import Process, current_process
