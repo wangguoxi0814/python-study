@@ -8,6 +8,7 @@
 #             返回Future，future.result()获取结果,会阻塞直至进程产生结果
 # 2. shutdown(): 不再接受任务，等待任务执行完毕，销毁进程池
 #              wait=True，阻塞主进程，等待所有子进程完成所有任务
+# with自动执行shutdown(wait=True)
 import time
 from concurrent.futures import ProcessPoolExecutor
 import os
