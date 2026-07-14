@@ -8,6 +8,9 @@
 # exc_tb: 异常追踪
 # 返回值：True表示异常被处理，False表示异常未被处理，会将异常抛到外面，不会被捕获
 
+# with可以跟多个open，比如复制文件时，一个文件读取流，一个文件写入流
+# with open(...) as f1, open(...) as f2:
+
 with open('../../docs/withdemo.txt', 'r') as f:
     for line in f:
         print(line)
