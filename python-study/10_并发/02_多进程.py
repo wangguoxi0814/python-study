@@ -7,6 +7,11 @@
 #   kwargs:               target函数关键字参数入参，类型字典
 #   daemon:               是否为守护进程，bool类型
 
+# 进程锁
+# 1. Lock： 不可重入锁， RLock: 可重入锁。 API相同：
+#       a. lock.acquire()上锁、lock.release()释放锁
+#       b. 最佳实践： with lock
+
 import os
 import time
 from multiprocessing import Process, current_process
