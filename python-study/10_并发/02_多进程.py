@@ -12,9 +12,13 @@
 #       a. lock.acquire()上锁、lock.release()释放锁
 #       b. 最佳实践： with lock
 
-# join
+# join()
 # p.join()会让当前进程等待p进程执行完再执行，p.join(timeout)可以指定等待时间
 # join只能操作已经start的进程
+
+# terminate()
+# p.terminate() 强制终止p进程，不会执行target方法的finally块；
+# 同样也是异步执行，调用不代表立即终止进程，通过p.is_alive()查看时可能为True，需要配合p.join()才能获取真实进程状态
 
 import os
 import time
