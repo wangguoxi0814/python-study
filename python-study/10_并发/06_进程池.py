@@ -29,7 +29,7 @@ if __name__ == '__main__':
     print(f2.result())
     print(f3.result())
     print(f4.result())
-    # 阻塞主进程，并等待所有任务完成, 无法再提交任务
+    # wait=True阻塞主进程，并等待所有任务完成, 无法再提交任务
     processExecutor.shutdown(wait=True)
 
     # RuntimeError: cannot schedule new futures after shutdown
