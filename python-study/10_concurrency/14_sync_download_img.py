@@ -4,12 +4,13 @@ import time
 import os
 import asyncio
 import aiohttp
+import aiofiles
 
 img_list = [
     'https://k.sinaimg.cn/www/dy/slidenews/4_img/2015_46/704_1775750_489797.jpg/w640slw.jpg',
     'https://pic.rmb.bdstatic.com/bjh/bb963316367/250904/e55063e18ddf94aeffcf18b1d5922615.jpeg',
     'https://www.sinaimg.cn/qc/model_lib/photo/100/19/57/87126_src.jpg'
-] * 20
+] * 200
 
 img_dir = str(time.time())
 if not os.path.exists(img_dir):
@@ -26,19 +27,41 @@ def download_img():
     end = time.time()
     print(f'总耗时{end - start}秒')
 
-async def aio_download_task(img_url, session):
+async def thread_local_write(path: str, content):
+    """
+    交给线程异步，小图片没有优势，适合大图片。
+    小图片写入本身很快，多任务小图片情况下多线程处理开销反而更大
+    :param path:
+    :param content:
+    :return:
+    """
+    def _write():
+        with open(path, 'wb') as f:
+            f.write(content)
+    await asyncio.to_thread(_write)
+
+async def aio_file_write(path: str, content):
+    async with aiofiles.open(path, 'wb') as f:
+        await f.write(content)
+
+async def aio_download_task(index, img_url, session):
     print(f'准备下载{img_url}')
     response = await session.get(img_url)
     content = await response.read()
-    print(f'下载成功!')
+    # print(f'下载成功!')
+    # 标准库的阻塞IO
     with open(f'{img_dir}/{img_url[-10:]}', 'wb') as f:
         f.write(content)
+    # 多线程处理本地磁盘IO
+    # await thread_local_write(f'{img_dir}/{index}{img_url[-10:]}', content)
+    # aio处理本地磁盘io
+    # await aio_file_write(f'{img_dir}/{index}{img_url[-10:]}', content)
     await response.release()
 
 async def aio_download_img():
     start = time.time()
     session = aiohttp.ClientSession()
-    await asyncio.gather(*(aio_download_task(img_url, session) for img_url in img_list))
+    await asyncio.gather(*(aio_download_task(index, img_url, session) for index, img_url in enumerate(img_list)))
     await session.close()
     end = time.time()
     print(f'总耗时{end - start}秒')
