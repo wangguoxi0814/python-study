@@ -1,5 +1,5 @@
 # await
-# 只有当await后面跟着IO任务时，会把当前任务挂起，会把CPU控制权交给事件循环，完成CPU的切换，最大化CPU利用率
+# 只有当await后面跟着异步IO任务时，会把当前任务挂起，会把CPU控制权交给事件循环，完成CPU的切换，最大化CPU利用率
 # await只能在async方法中使用，后面只能接可等待对象
 # Common await obj:
 #          1. Coroutine
