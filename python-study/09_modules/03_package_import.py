@@ -1,12 +1,12 @@
 # 包导入
+# 一个目录就是一个包，一个包可以包含多个模块，并且有一个__init__.py文件，当然，python3.3+可以没有，但建议保留
 # 在导入包时，会执行包的__init__.py文件
 # 在__init__.py中，可以设置一些包的初始化逻辑
-# 在__init__.py中，
-# __init__.py中的__all__导出可以导出包、模块、函数、变量
+# __init__.py中的__all__控制from package import * 时导入的内容
 
-# import agents
-# # 需要在__init__中import模块才能使用这种方式
-# agents.agent.chat()
+import agents
+# 需要在__init__中import模块才能使用这种方式
+agents.agent.chat()
 #
 # from agents import agent
 # from agents import rag
@@ -18,9 +18,10 @@
 from agents import *
 
 agent.chat()
-# 这里引入的实际是know_base包的__init__，所以如果需要在这里使用rag模块的内容，则需要在know_base包的__init__中导入模块
+
+# 下面引入的实际是know_base包的__init__，所以如果需要在这里使用rag模块的内容，则需要在know_base包的__init__中导入模块
 # know_base.rag.similar_query()
 
-from agents.know_base import *
-rag.similar_query()
+# from agents.know_base import *
+# rag.similar_query()
 
