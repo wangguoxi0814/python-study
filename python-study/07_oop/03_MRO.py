@@ -3,9 +3,9 @@
 # 1. 子类永远在父类前面
 # 2. 一个类只能在MRO序列中出现一次
 # 3. 保持继承时左右书写的顺序
-# 菱形继承：比如Person有Student和Worker两个子类，类InternationStudent继承Student和Woker，就形成了一个菱形
+# 菱形继承：比如有Student和Worker两个类继承Person，又有InternationStudent继承Student和Worker，就形成了一个菱形
 # 菱形继承主要问题：
-# 1. 方法/属性歧义：如Student和Woker都实现了同一个方法，那么InternationStudent调用这个方法时，到底应该调用Student还是Worker的。
+# 1. 方法/属性歧义：如Student和Worker都实现了同一个方法，那么InternationStudent调用这个方法时，到底应该调用Student还是Worker的。
 #    这个情况下，Python查找方法的顺序为：先在实例自身查找，然后再按照MRO链顺序查找，因此MRO成功解决了这个问题
 # 2. 重复初始化：顶层类Person会被重复初始化
 # 3. 状态不一致：Person类由于会被重复初始化，那如果后续的初始化值和第一次不相同，就会出现初始化值覆盖问题，导致状态不一致。
